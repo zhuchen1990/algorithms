@@ -5,15 +5,16 @@ package com.ezreal.lcs;
  * @author Ezreal
  * @version 2018/5/4.
  * @deprecated 最长子序列问题
+ * 时间复杂度 构建这个表的时间 O（mn）+ 查询的时间 O(1)
  */
 public class Lcs {
     public static void main(String[] args) {
         String[] x ={"A", "B", "C", "B", "D", "A", "B"};
         String[] y ={"B", "D", "C", "A", "B", "A"};
-        lcslength(x,y);
+        lcsLength(x,y);
     }
 
-    private static void lcslength(String[] x, String[] y){
+    private static void lcsLength(String[] x, String[] y){
         int m = x.length+1;
         int n = y.length+1;
         char[][]b = new char[m][n];
