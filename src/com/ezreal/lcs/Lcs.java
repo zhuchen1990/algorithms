@@ -4,16 +4,24 @@ package com.ezreal.lcs;
 /**
  * @author Ezreal
  * @version 2018/5/4.
- * @deprecated 最长子序列问题
- * 时间复杂度 构建这个表的时间 O（mn）+ 查询的时间 O(1)
  */
 public class Lcs {
+    /**
+     * 最长子序列问题
+     * 时间复杂度 构建这个表的时间 O（mn）+ 查询的时间 O(1)
+     * @param args 参数
+     */
     public static void main(String[] args) {
         String[] x ={"A", "B", "C", "B", "D", "A", "B"};
         String[] y ={"B", "D", "C", "A", "B", "A"};
         lcsLength(x,y);
     }
 
+    /**
+     * 构建 序列x 和 序列y 的二维表
+     * @param x 序列x
+     * @param y 序列y
+     */
     private static void lcsLength(String[] x, String[] y){
         int m = x.length+1;
         int n = y.length+1;
