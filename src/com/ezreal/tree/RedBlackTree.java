@@ -95,7 +95,7 @@ public class RedBlackTree {
         insertFixUp(z);
     }
 
-    public  void insertFixUp(RBTNode z){
+    private void insertFixUp(RBTNode z){
         while (z.parent != null && z.parent.color == RBTNode.RED){
             if (z.parent == z.parent.parent.left){
                 RBTNode y = z.parent.parent.right;
@@ -129,4 +129,5 @@ public class RedBlackTree {
         }
         this.root.color = RBTNode.BLACK;
     }
+
 }
