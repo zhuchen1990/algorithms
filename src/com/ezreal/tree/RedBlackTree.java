@@ -1,7 +1,7 @@
 package com.ezreal.tree;
 
 /**
- * http://www.cnblogs.com/skywang12345/p/3624343.html#a3
+ * 参考文献 http://www.cnblogs.com/skywang12345/p/3624343.html#a3
  * @author Ezreal#
  * @version 2018/5/10.
  */
@@ -128,6 +128,11 @@ public class RedBlackTree {
             }
         }
         this.root.color = RBTNode.BLACK;
+    }
+
+    public void delete(RBTNode z){
+        RBTNode y = z;
+
     }
 
 }
