@@ -41,21 +41,6 @@ public class KMP {
         return a;
     }
 
-//    public static int[] matchTable(char[] c) {
-//        int length = c.length;
-//        int[] a = new int[length];
-//        int k = 0, j;
-//        a[0] = 0;
-//        for(int q = 1;q < length;q++){
-//            while (k > 0 && c[k+1] != c[q]){
-//                k = a[k];
-//            }
-//            if (c[k + 1] == c[q]){
-//                k = k+1;
-//            }
-//
-//        }
-//    }
     /**
      * 匹配字符串
      *
@@ -63,46 +48,46 @@ public class KMP {
      * @param subStringChars
      * @return
      */
-//    public static boolean matchString(char[] originStrChars, char[] subStringChars) {
-//        int[] next = matchTable(subStringChars);
-//        int i = 0;
-//        int j = 0;
-//        while (i <= originStrChars.length - 1 && j <= subStringChars.length - 1) {
-//            if (j == -1 || originStrChars[i] == subStringChars[j]) {
-//                i++;
-//                j++;
-//            } else {
-//                j = next[j];
-//            }
-//        }
-//        if (j < subStringChars.length) {
-//            return false;
-//        } else {
-//            return true;
-//        }
-//    }
-
     public static boolean matchString(char[] originStrChars, char[] subStringChars) {
-       int n = originStrChars.length;
-       int m = subStringChars.length;
-       int q = 0;
-       int[] next = matchTable(subStringChars);
-        for (int i = 0; i < n; i++) {
-            while (q > 0 && subStringChars[q+1] != originStrChars[i]){
-                q = next[q];
-            }
-//            if (q > 0 && originStrChars[i] != subStringChars[q]) {
-//                q = next[q];
-//            }
-            if (originStrChars[i] == subStringChars[q+1]) {
-                q++;
-            }
-            if (q == m) {
-                return true;
+        int[] next = matchTable(subStringChars);
+        int i = 0;
+        int j = 0;
+        while (i <= originStrChars.length - 1 && j <= subStringChars.length - 1) {
+            if (j == -1 || originStrChars[i] == subStringChars[j]) {
+                i++;
+                j++;
+            } else {
+                j = next[j];
             }
         }
-        return false;
+        if (j < subStringChars.length) {
+            return false;
+        } else {
+            return true;
+        }
     }
+
+//    public static boolean matchString(char[] originStrChars, char[] subStringChars) {
+//       int n = originStrChars.length;
+//       int m = subStringChars.length;
+//       int q = 0;
+//       int[] next = matchTable(subStringChars);
+//        for (int i = 0; i < n; i++) {
+//            while (q > 0 && subStringChars[q+1] != originStrChars[i]){
+//                q = next[q];
+//            }
+////            if (q > 0 && originStrChars[i] != subStringChars[q]) {
+////                q = next[q];
+////            }
+//            if (originStrChars[i] == subStringChars[q+1]) {
+//                q++;
+//            }
+//            if (q == m) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
 
 
 
@@ -111,7 +96,9 @@ public class KMP {
 //        char[] subStrChars = {'A','B','C','D','A','B','D'};
 //        boolean b = matchString(originStrChars, subStringChars);
         String originStr = "BACBABABAABCBAB";
-        String subStr = "ABABACA";
+//        String originStr = "BBC ABCDAB ABCDABCDABDE";
+        String subStr = "ABA";
+//        String subStr = "ABCDABCD";
         boolean b = hasSubString(originStr, subStr);
         System.out.println(b);
 
