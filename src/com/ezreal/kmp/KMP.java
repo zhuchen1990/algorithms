@@ -94,10 +94,10 @@ public class KMP {
 //            if (q > 0 && originStrChars[i] != subStringChars[q]) {
 //                q = next[q];
 //            }
-            if (originStrChars[i] == subStringChars[q]) {
+            if (originStrChars[i] == subStringChars[q+1]) {
                 q++;
             }
-            if (q == subStringChars.length) {
+            if (q == m) {
                 return true;
             }
         }
